@@ -18,7 +18,7 @@ jobs:
 
         with:
 
-          find: "legentbot"
+          find: "LEGENTBOT"
 
           replace: "VAMPIREX"
 
