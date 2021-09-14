@@ -20,7 +20,7 @@ jobs:
 
           find: "LEGENTBOT"
 
-          replace: "VAMPIREX"
+          replace: "VAMPIRE"
 
       - name: Create Pull Request
 
