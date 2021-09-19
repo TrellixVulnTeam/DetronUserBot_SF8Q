@@ -1,4 +1,4 @@
-#   Copyright (C) 2021 D15H4NT0P
+#   Copyright (C) 2021 MickeyxD
 #
 #   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
@@ -15,6 +15,6 @@
 
 
 rm -rf InVade
-git clone https://github.com/D15H4NT0P/VAMPIRE-X
-cd VAMPIRE-X
+git clone https://github.com/MickeyxD/DetronUserBot
+cd DetronUserBot
 python3 -m userbot
