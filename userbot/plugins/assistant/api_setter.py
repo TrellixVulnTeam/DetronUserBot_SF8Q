@@ -16,7 +16,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 
 from userbot import *
 from userbot.cmdhelp import *
-from LEGENDBOT.utils import *
+from DETRONBOT.utils import *
 from userbot.Config import Config
 from userbot import ALIVE_NAME
 LEGEND_row = Config.BUTTONS_IN_HELP

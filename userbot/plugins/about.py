@@ -2,7 +2,7 @@ from . import *
 import asyncio
 import random
 from telethon import events
-from LEGENDBOT.utils import admin_cmd
+from DETRONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -28,7 +28,7 @@ pm_caption += "💫💫**✞︎t͛ẞ̸ Lêɠêɳ̃dẞø†**💫💫 >>》 V2.
 pm_caption += "😇😇**𝖑𝖊ɠêɳ̃d**😇😇   >>》 [οωиєя](https://t.me/Its_LegendBoy)\n"
 pm_caption += f"🔰🔰**𝕸𝖆𝖙𝖊𝖗**🔰🔰  >>》 {legend_mention}\n"
 pm_caption += "❣❣ **𝖑𝖊ɠêɳ̃dẞø✞︎**❣❣ >>》 [𝕲𝖗ουρ](https://t.me/Legend_Userbot)\n\n"
-pm_caption += "🎊🎊 **𝕽𝖊𝖕ο**🎊🎊  >>》 [𝕽єρο](https://github.com/LEGEND-OS/LEGENDBOT)\n\n"
+pm_caption += "🎊🎊 **𝕽𝖊𝖕ο**🎊🎊  >>》 [𝕽єρο](https://github.com/LEGEND-OS/DETRONBOT)\n\n"
 pm_caption += "[....▄███▄███▄\n....█████████\n.......▀██❣🌹💫😇💫🌹❣███▀\n...............▀█▀\n](https://t.me/Its_LegendBoy)\n\n"
 @borg.on(admin_cmd(pattern=r"abot"))
 @bot.on(sudo_cmd(pattern="abot$", allow_sudo=True))

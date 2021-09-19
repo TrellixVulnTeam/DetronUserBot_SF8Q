@@ -10,7 +10,7 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

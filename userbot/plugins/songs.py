@@ -10,7 +10,7 @@ import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
 
@@ -497,7 +497,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 songh,
-                caption="🔆**Here's the requested song!**🔆\n`Check out` [LEGENDBOT](https://t.me/LEGENDSupport)",
+                caption="🔆**Here's the requested song!**🔆\n`Check out` [DETRONBOT](https://t.me/LEGENDSupport)",
             )
             await event.delete()
         except YouBlockedUserError:

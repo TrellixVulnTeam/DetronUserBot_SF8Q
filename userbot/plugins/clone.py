@@ -12,12 +12,12 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
-from LEGENDBOT.utils import admin_cmd
+from DETRONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
 
-DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "Legendary LEGENDBOT"
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "Legendary DETRONBOT"
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 BOTLOG = True
 

@@ -19,7 +19,7 @@ echo """
 
 
 
-Legendary LEGENDBOT
+Legendary DETRONBOT
 @LEGENDSupport
 """
 

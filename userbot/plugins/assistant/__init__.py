@@ -1,4 +1,4 @@
-# LEGENDBOT Assistant
+# DETRONBOT Assistant
 from . import *
 from telethon import Button, custom
 

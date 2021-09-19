@@ -5,7 +5,7 @@ import asyncio
 from userbot.cmdhelp import CmdHelp
 
 from userbot import *
-from LEGENDBOT.utils import *
+from DETRONBOT.utils import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
 

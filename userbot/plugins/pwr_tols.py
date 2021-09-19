@@ -5,7 +5,7 @@ import asyncio
 from os import execl
 from time import sleep
 
-from LEGENDBOT.utils import admin_cmd
+from DETRONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot import HEROKU_APP, bot
 
@@ -36,7 +36,7 @@ async def _(event):
 @bot.on(sudo_cmd(pattern="reload$", allow_sudo=True))
 async def rel(event):
     await eor(event, "Reloading Lêɠêɳ̃dẞø†... Wait for few seconds...")
-    await reload_LEGENDBOT()
+    await reload_DETRONBOT()
 
 
 CmdHelp("pwr tools").add_command(

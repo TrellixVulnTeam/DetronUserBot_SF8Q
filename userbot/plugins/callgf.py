@@ -13,7 +13,7 @@ Available Commands:
 from telethon import events
 
 import asyncio
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 from userbot.cmdhelp import CmdHelp
 

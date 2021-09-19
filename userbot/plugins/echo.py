@@ -16,7 +16,7 @@ from userbot.plugins.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

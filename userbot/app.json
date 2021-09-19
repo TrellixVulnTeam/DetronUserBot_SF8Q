@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/LEGEND-OS/LEGENDBOT/",
-  "website": "https://github.com/LEGEND-OS/LEGENDBOT/",
+  "repository": "https://github.com/LEGEND-OS/DETRONBOT/",
+  "website": "https://github.com/LEGEND-OS/DETRONBOT/",
   "success_url": "https://t.me/Legend_Userbot",
   "env": {
     "ENV": {
@@ -132,7 +132,7 @@
        "value": ""
     }, 
     "LEGEND_STRING": {
-      "description": "Get this value by running https://repl.it/@KrishnaJaiswal1/LEGENDBOT#main.py ",
+      "description": "Get this value by running https://repl.it/@KrishnaJaiswal1/DETRONBOT#main.py ",
       "value": ""
     },
     "HEROKU_API_KEY": {

@@ -1,8 +1,8 @@
-# PLUGIN MADE BY @Its_LegendBoy FOR LEGENDBOT
+# PLUGIN MADE BY @Its_LegendBoy FOR DETRONBOT
 # KEEP CREDITS ELSE GAY
 
 import random, re
-from LEGENDBOT.utils import admin_cmd
+from DETRONBOT.utils import admin_cmd
 import asyncio
 from telethon import events
 

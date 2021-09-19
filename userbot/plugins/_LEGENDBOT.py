@@ -1,13 +1,13 @@
-"""LEGENDBOT Help Command"""
+"""DETRONBOT Help Command"""
 
 from userbot import *
 from userbot import CMD_HELP
-from LEGENDBOT.utils import *
+from DETRONBOT.utils import *
 
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def LEGENDBOTt(event):
+async def DETRONBOTt(event):
     if event.fwd_from:
         return
     """ .plinfo cmd """
