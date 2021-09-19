@@ -1,7 +1,7 @@
 {
-  "name": "Îtß Lêɠêɳ̃dẞø† 🇮🇳",
+  "name": "Îts Lêɠêɳ̃dẞø† 🇮🇳",
   "description": "τнє ϐєѕτ υѕєяϐοτ мα∂є ϐγ ℓєgєи∂. Made with Love And By Python Language With Hardwork... ❤ ",
-  "logo": "https://telegra.ph/file/cfc1ba8da5fd7ab02fa7d.jpg",
+  "logo": "https://telegra.ph/file/ccf946c43d7c55185355b.jpg",
     "keywords": [
     "telegram",
     "userbot",
@@ -24,7 +24,7 @@
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name. By default it is LEGEND User",
-      "value": "✞︎tß Lêɠêɳ̃dßøy 🇮🇳",
+      "value": "DETRONBOT 🇮🇳",
       "required": false
     },
     "ALIVE_MSG": {
@@ -54,17 +54,17 @@
     },
     "AWAKE_PIC": {
       "description": "Put here any telegraph media link for awake pic in .awake Or .bot command.",
-      "value": "https://telegra.ph/file/8249d3fa8b6c38971dfd6.jpg",
+      "value": "https://telegra.ph/file/ccf946c43d7c55185355b.jpg",
       "required": true
     },
     "OP_PIC": {
       "description": "Put here any telegraph media link for OP pic in .op command.",
-      "value": "https://telegra.ph/file/75e1eda1498620f0030ea.jpg",
+      "value": "https://telegra.ph/file/c717f957c0147753dfe36.jpg",
       "required": true
     },
     "ALIVE_PIC": {
       "description": "Put here any telegraph media link for alive pic in .alive Or .detron command.",
-      "value": "https://telegra.ph/file/c84467e9ef71c0c2d65cf.jpg",
+      "value": "https://telegra.ph/file/c717f957c0147753dfe36.jpg",
       "required": false
     },
     "BIO_MSG": {
@@ -74,12 +74,12 @@
     },
     "PM_PIC": {
       "description": "put here any telegraph media link for custom pmpermit pic.",
-      "value": "https://telegra.ph/file/281dc92f18508c52489b6.jpg",
+      "value": "https://telegra.ph/file/c717f957c0147753dfe36.jpg",
       "required": true
     },
     "PM_MSG": {
       "description": "Enter Your custom pm permit msg.",
-      "value": "нєℓℓο ѕιя / мιѕѕ,\nρℓєαѕє ∂οи'τ τяγ το ѕραм мγ мαѕτєя οτнєяωιѕє υ ωιℓℓ ϐℓοϲκє∂ ϐγ 𝐃εƭσɳẞø✞︎ 🇮🇳.\nℑ ωιℓℓ яєρℓγ υ αƒτєя ϲοмє ϐαϲκ οиℓιиє,\nτнαиκγου!",
+      "value": "Hello sir / miss,\npleasє don't trγ tο ѕpam mγ mastєr otherwiѕє υ wιll ßℓοϲκєd ßγ Dêtrønẞø✞︎ 🇮🇳.\nℑ ωιℓℓ яєρℓγ υ αƒτєя ϲοмє ϐαϲκ οиℓιиє,\nThαnκγου!",
       "required": false
     },
     "MAX_FLOOD_IN_PM": {
