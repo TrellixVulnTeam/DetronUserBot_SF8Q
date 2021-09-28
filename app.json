@@ -1,7 +1,7 @@
 {
   "name": "Îts Lêɠêɳ̃dẞø† 🇮🇳",
   "description": "τнє ϐєѕτ υѕєяϐοτ мα∂є ϐγ ℓєgєи∂. Made with Love And By Python Language With Hardwork... ❤ ",
-  "logo": "https://telegra.ph/file/ccf946c43d7c55185355b.jpg",
+  "logo": "https://telegra.ph/file/44a89dae5c134fdcd8203.jpg",
     "keywords": [
     "telegram",
     "userbot",
@@ -54,7 +54,7 @@
     },
     "AWAKE_PIC": {
       "description": "Put here any telegraph media link for awake pic in .awake Or .bot command.",
-      "value": "https://telegra.ph/file/ccf946c43d7c55185355b.jpg",
+      "value": "https://telegra.ph/file/44a89dae5c134fdcd8203.jpg",
       "required": true
     },
     "OP_PIC": {
