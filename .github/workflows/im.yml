@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "DetronUserBot"
+          find: "https://telegra.ph/file/ccf946c43d7c55185355b.jpg"
 
-          replace: "UltronUserBot"
+          replace: "https://telegra.ph/file/44a89dae5c134fdcd8203.jpg"
 
       - name: Create Pull Request
 
