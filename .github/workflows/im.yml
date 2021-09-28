@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "LEGEND_"
+          find: "VampireX"
 
-          replace: "ULTRON_"
+          replace: "UltronBot"
 
       - name: Create Pull Request
 
