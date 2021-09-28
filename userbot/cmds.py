@@ -104,4 +104,4 @@ class CMD_HELP:
         elif text == "USERNAMES":
             return "<user name (s)>"
 
-# legendbot
+# ULTRONBOT

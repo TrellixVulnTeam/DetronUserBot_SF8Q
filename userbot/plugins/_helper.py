@@ -46,7 +46,7 @@ async def _(event):
     chat = "@Botfather"
     if tgbotusername is not None:
         try:
-            results = await event.client.inline_query(tgbotusername, "legendbot_help")
+            results = await event.client.inline_query(tgbotusername, "ULTRONBOT_help")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
@@ -74,7 +74,7 @@ async def _(event):
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def legendbott(event):
+async def ULTRONBOTt(event):
     if event.fwd_from:
         return
     args = event.pattern_match.group(1).lower()

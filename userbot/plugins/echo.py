@@ -1,4 +1,4 @@
-# Echo remastered by @M1CKEY_0P for legendbot
+# Echo remastered by @M1CKEY_0P for ULTRONBOT
 # Codes by @mrconfused
 # Kang with credits
 

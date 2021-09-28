@@ -44,4 +44,4 @@ async def is_admin(client, chat_id, user_id):
     else:
         return False
 
-# legendbot
+# ULTRONBOT
