@@ -131,7 +131,7 @@
        "description": "for login private messages create a private group and add @missrose_bot and do /id and add that id", 
        "value": ""
     }, 
-    "LEGEND_STRING": {
+    "ULTRON_STRING": {
       "description": "Get this value by running https://repl.it/@KrishnaJaiswal1/ULTRONBOT#main.py ",
       "value": ""
     },

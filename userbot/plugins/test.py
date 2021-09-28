@@ -33,7 +33,7 @@ async def _(event):
         await edit_or_reply(event, "**SAVING OUTPUT TO ULTRONBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your [ULTRONBOT](https:/t.me/LEGEND_Userbot) is working Fine...\n       Join @LEGEND_Support For Any Help......"
+            "Your [ULTRONBOT](https:/t.me/ULTRON_Userbot) is working Fine...\n       Join @ULTRON_Support For Any Help......"
         )
 
 CmdHelp("test").add_command(

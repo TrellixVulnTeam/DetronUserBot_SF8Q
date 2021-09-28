@@ -24,8 +24,8 @@ LEGENDversion = "𝚅•2.𝙾"
 botversion = "𝚅•1.𝙾"
 
 os.system("pip install --upgrade pip")
-if Var.LEGEND_STRING:
-    session_name = str(Var.LEGEND_STRING)
+if Var.ULTRON_STRING:
+    session_name = str(Var.ULTRON_STRING)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
 else:
     session_name = "startup"
@@ -53,7 +53,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-LEGEND_ID = [
+ULTRON_ID = [
     "1938996006"
 ]
 

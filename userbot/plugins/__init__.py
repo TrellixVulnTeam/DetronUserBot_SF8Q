@@ -6,20 +6,20 @@ import datetime
 from telethon import version
 from . import *
 from userbot import ALIVE_NAME
-LEGEND_USER = bot.me.first_name
+ULTRON_USER = bot.me.first_name
 Its_M1CKEY0P = bot.uid
 USERID = bot.uid
 ALIVE_NAME = Config.ALIVE_NAME
-legend_mention = f"[{LEGEND_USER}](tg://user?id={Its_M1CKEY0P})"
+legend_mention = f"[{ULTRON_USER}](tg://user?id={Its_M1CKEY0P})"
 
 lmention = f"<a href = tg://user?id={USERID}>{Config.ALIVE_NAME}</a>"
 
 
-LEGEND_logo = "./userbot/resources/pics/-6163428037589314866_121.jpg"
-LEGEND_logo1 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
-LEGEND_logo2 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
-LEGEND_logo4 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
-LEGEND_logo3 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
+ULTRON_logo = "./userbot/resources/pics/-6163428037589314866_121.jpg"
+ULTRON_logo1 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
+ULTRON_logo2 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
+ULTRON_logo4 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
+ULTRON_logo3 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 LEGENDversion = "♥️𝚅2.𝙾♥️"
 
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"

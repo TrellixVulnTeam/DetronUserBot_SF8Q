@@ -24,7 +24,7 @@ from ULTRONBOT.plugins.sql_helper.fban_sql import (
 
 logs_id = Config.FBAN_LOGGER_GROUP
 bot = "@MissRose_bot"
-LEGEND_logo = "./LEGEND_logo.jpg"
+ULTRON_logo = "./ULTRON_logo.jpg"
 # Keep all credits pls
 # madewith great effort by @M1CKEY_0P
 # modified by @M1CKEY_0P for fbans
@@ -382,7 +382,7 @@ async def search(event):
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await eor(event, "`Making new fed...`")
     async with borg.conversation(chat) as conv:
@@ -390,7 +390,7 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=609517172)
             )
-            await event.client.send_message(chat, f"/newfed {LEGEND_input}")
+            await event.client.send_message(chat, f"/newfed {ULTRON_input}")
             response = await response
         except YouBlockedUserError:
             await eor(event, "`Please unblock` @MissRose_Bot `and try again`")
@@ -408,13 +408,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await event.edit("`Trying to rename your fed...`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=609517172))
-              await event.client.send_message(chat, f"/renamefed {LEGEND_input}")
+              await event.client.send_message(chat, f"/renamefed {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @MissRose_Bot")
@@ -430,7 +430,7 @@ async def _(event):
     if event.fwd_from:
         return
     LEGEND = await event.edit("`Collecting fstat....`")
-    thumb = LEGEND_logo
+    thumb = ULTRON_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         lavde = str(previous_message.sender_id)
@@ -458,7 +458,7 @@ async def _(event):
                         event.chat_id,
                         massive,
                         thumb=thumb,
-                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using ULTRONBOT](t.me/LEGEND_Userbot) ⚡**",
+                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using ULTRONBOT](t.me/ULTRON_Userbot) ⚡**",
                     )
                 else:
                     await borg.send_message(event.chat_id, massive.text)

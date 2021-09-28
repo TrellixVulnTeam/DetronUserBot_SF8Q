@@ -19,8 +19,8 @@ from userbot.cmdhelp import *
 from ULTRONBOT.utils import *
 from userbot.Config import Config
 from userbot import ALIVE_NAME
-LEGEND_row = Config.BUTTONS_IN_HELP
-LEGEND_emoji = Config.EMOJI_IN_HELP1
+ULTRON_row = Config.BUTTONS_IN_HELP
+ULTRON_emoji = Config.EMOJI_IN_HELP1
 
 from . import *
 # main menu for api setting

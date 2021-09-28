@@ -35,11 +35,11 @@ async def spammer(e):
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
 async def bigspam(LEGEND):
     if not LEGEND.text[0].isalpha() and LEGEND.text[0] not in ("/", "#", "@", "!"):
-        LEGEND_msg = LEGEND.text
-        ULTRONBOT_count = int(LEGEND_msg[9:13])
-        LEGEND_spam = str(LEGEND.text[13:])
+        ULTRON_msg = LEGEND.text
+        ULTRONBOT_count = int(ULTRON_msg[9:13])
+        ULTRON_spam = str(LEGEND.text[13:])
         for i in range(1, ULTRONBOT_count):
-            await LEGEND.respond(LEGEND_spam)
+            await LEGEND.respond(ULTRON_spam)
         await LEGEND.delete()
         if LOGGER:
             await LEGEND.client.send_message(

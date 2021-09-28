@@ -15,7 +15,7 @@ import telethon.utils
 os.system("pip install -U telethon")
 
 l2= Config.SUDO_COMMAND_HAND_LER
-LEGEND_PIC = Config.ALIVE_PIC or "https://telegra.ph/file/75e1eda1498620f0030ea.jpg"
+ULTRON_PIC = Config.ALIVE_PIC or "https://telegra.ph/file/75e1eda1498620f0030ea.jpg"
 l1 = Config.COMMAND_HAND_LER
 
 
@@ -28,7 +28,7 @@ async def add_bot(bot_token):
         bot.me = await bot.get_me()
         bot.uid = telethon.utils.get_peer_id(bot.me)
     except Exception as e:
-        print(f"LEGEND_STRING - {str(e)}")
+        print(f"ULTRON_STRING - {str(e)}")
         sys.exit()
         
         
@@ -76,7 +76,7 @@ print(f"""『🔱🇱 🇪 🇬 🇪 🇳 🇩 B O T 🔱』➙𖤍࿐ IS ON!!! 
 TYPE :- " .gpromote @M1CKEY_0P " OR .legend OR .ping CHECK IF I'M ON!
 ╔════❰ULTRONBOT❱═❍⊱❁۪۪
 ║┣⪼ OWNER - LEGEND
-║┣⪼{LEGEND_PIC}
+║┣⪼{ULTRON_PIC}
 ║┣⪼ CREATOR -@M1CKEY_0P
 ║┣⪼ TELETHON - 1.2.0
 ║┣⪼ ✨ 『🔱🇱 🇪 🇬 🇪 🇳 🇩 🔱』𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨
@@ -88,7 +88,7 @@ async def legend_is_on():
         if Config.LOGGER_ID != 0:
             await bot.send_file(
                 Config.LOGGER_ID,
-                LEGEND_PIC,
+                ULTRON_PIC,
                 caption=f"#START \n\nDeployed ULTRONBOT Successfully\n\n**ULTRONBOT- {LEGENDversion}**\n\nType `{l1}ping` or `{l1}alive` to check! \n\nJoin [LegendBot Channel](t.me/Its_LegendBot) for Updates & [LegendBot Chat](t.me/Legend_Userbot) for any query regarding LegendBot",
             )
     except Exception as e:

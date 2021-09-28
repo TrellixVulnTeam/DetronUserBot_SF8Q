@@ -19,7 +19,7 @@ async def reply_id(event):
 
 
 DEFAULTUSER = ALIVE_NAME or "✞︎t͛ẞ̸ 𝖑𝖊ɠêɳ̃dẞø✞︎ 🇮🇳"
-LEGEND_IMG = Config.ALIVE_PIC
+ULTRON_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice 𝖑𝖊ɠêɳ̃dẞø✞︎"
 CUSTOM_YOUR_GROUP =Config.YOUR_GROUP or "@Legend_Userbot"
 
@@ -66,20 +66,20 @@ async def amireallyalive(alive):
         return
     reply_to_id = await reply_id(alive)
 
-    if  LEGEND_IMG:
-        LEGEND_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
+    if  ULTRON_IMG:
+        ULTRON_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
         
-        LEGEND_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
-        LEGEND_caption += f"        **♥ẞø† ẞ✞︎α†µѕ** \n"
-        LEGEND_caption += f"•⚜️• **Øաղ̃ҽ̈ɾ**          : {mention}\n\n"
-        LEGEND_caption += f"•📍• **𝖑𝖊ɠêɳ̃dẞø†**   : {LEGENDversion}\n"
-        LEGEND_caption += f"•📍• **†ҽ̀lҽ́ƭhøղ̃**     : `{version.__version__}`\n"
-        LEGEND_caption += f"•📍• **𝚄ρƭเɱε**         : `{uptime}`\n"
-        LEGEND_caption += f"•📍• **𝙶𝚛𝚘𝚞𝚙**           : [𝙶𝚛𝚘𝚞𝚙](t.me/Legend_Userbot)\n"
-        LEGEND_caption += f"•📍• **𝙼𝚢 𝙶𝚛𝚘𝚞𝚙**  : {CUSTOM_YOUR_GROUP}\n"   
+        ULTRON_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
+        ULTRON_caption += f"        **♥ẞø† ẞ✞︎α†µѕ** \n"
+        ULTRON_caption += f"•⚜️• **Øաղ̃ҽ̈ɾ**          : {mention}\n\n"
+        ULTRON_caption += f"•📍• **𝖑𝖊ɠêɳ̃dẞø†**   : {LEGENDversion}\n"
+        ULTRON_caption += f"•📍• **†ҽ̀lҽ́ƭhøղ̃**     : `{version.__version__}`\n"
+        ULTRON_caption += f"•📍• **𝚄ρƭเɱε**         : `{uptime}`\n"
+        ULTRON_caption += f"•📍• **𝙶𝚛𝚘𝚞𝚙**           : [𝙶𝚛𝚘𝚞𝚙](t.me/Legend_Userbot)\n"
+        ULTRON_caption += f"•📍• **𝙼𝚢 𝙶𝚛𝚘𝚞𝚙**  : {CUSTOM_YOUR_GROUP}\n"   
 
         await alive.client.send_file(
-            alive.chat_id, LEGEND_IMG, caption=LEGEND_caption, reply_to=reply_to_id
+            alive.chat_id, ULTRON_IMG, caption=ULTRON_caption, reply_to=reply_to_id
         )
         await alive.delete()
     else:

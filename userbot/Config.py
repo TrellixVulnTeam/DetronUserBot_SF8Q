@@ -158,7 +158,7 @@ if ENV:
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/LEGEND-OS/ULTRONBOT"
         )
-        LEGEND_STRING = os.environ.get("LEGEND_STRING", None)
+        ULTRON_STRING = os.environ.get("ULTRON_STRING", None)
         BOT_MODE = os.environ.get("BOT_MODE", "ON")
         ABUSE = os.environ.get("ABUSE", None)
         BOTLOG_CHATID = os.environ.get("PM_LOGGR_BOT_API_ID", None)

@@ -28,13 +28,13 @@ async def _(LEGENDevent):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/bin {LEGEND_input}")
+              await event.client.send_message(chat, f"/bin {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -49,13 +49,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/vbv {LEGEND_input}")
+              await event.client.send_message(chat, f"/vbv {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -70,13 +70,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/key {LEGEND_input}")
+              await event.client.send_message(chat, f"/key {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -91,13 +91,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/iban {LEGEND_input}")
+              await event.client.send_message(chat, f"/iban {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -112,13 +112,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/ss {LEGEND_input}")
+              await event.client.send_message(chat, f"/ss {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -133,13 +133,13 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    ULTRON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
-    await event.edit(f"Trying to generate CC from the given bin `{LEGEND_input}`")
+    await event.edit(f"Trying to generate CC from the given bin `{ULTRON_input}`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/gen {LEGEND_input}")
+              await event.client.send_message(chat, f"/gen {ULTRON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
