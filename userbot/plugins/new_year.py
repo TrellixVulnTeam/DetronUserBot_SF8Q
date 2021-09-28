@@ -1,5 +1,5 @@
 # Made By @M1CKEY_0P. Keep Credit if you are gonna copy paste it. LOL NOOBS....
-# Happy New Year plugin by Its_LegendBoy for Legendbot
+# Happy New Year plugin by Its_M1CKEY0P for Legendbot
 # Kangers keep credits...
 # Now in ULTRONBOT
 

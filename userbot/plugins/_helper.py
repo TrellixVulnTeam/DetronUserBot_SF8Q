@@ -31,7 +31,7 @@ async def repo(event):
     try:
         legend = await bot.inline_query(botname, "repo")
         await legend[0].click(event.chat_id)
-        if event.sender_id == Its_LegendBoy:
+        if event.sender_id == Its_M1CKEY0P:
             await event.delete()
     except (noin, dedbot):
         await eor(event, msg)
