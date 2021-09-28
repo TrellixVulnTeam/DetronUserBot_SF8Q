@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/LEGEND-OS/ULTRONBOT/",
-  "website": "https://github.com/LEGEND-OS/ULTRONBOT/",
+  "repository": "https://github.com/ULTRON-OS/ULTRONBOT/",
+  "website": "https://github.com/ULTRON-OS/ULTRONBOT/",
   "success_url": "https://t.me/Legend_Userbot",
   "env": {
     "ENV": {
@@ -23,7 +23,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name. By default it is LEGEND User",
+      "description": "Fill your Full name. By default it is ULTRON User",
       "value": "✞︎tß Lêɠêɳ̃dßøy 🇮🇳",
       "required": false
     },

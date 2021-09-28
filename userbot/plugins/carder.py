@@ -12,15 +12,15 @@ from ULTRONBOT import CmdHelp, bot as ULTRONBOT
 
 @ULTRONBOT.on(admin_cmd("gencc$"))
 @ULTRONBOT.on(sudo_cmd("gencc$", allow_sudo=True))
-async def _(LEGENDevent):
-    if LEGENDevent.fwd_from:
+async def _(ULTRONevent):
+    if ULTRONevent.fwd_from:
         return
-    LEGENDcc = Faker()
-    LEGENDname = LEGENDcc.name()
-    LEGENDadre = LEGENDcc.address()
-    LEGENDcard = LEGENDcc.credit_card_full()
+    ULTRONcc = Faker()
+    ULTRONname = ULTRONcc.name()
+    ULTRONadre = ULTRONcc.address()
+    ULTRONcard = ULTRONcc.credit_card_full()
     
-    await edit_or_reply(LEGENDevent, f"__**👤 NAME :- **__\n`{LEGENDname}`\n\n__**🏡 ADDRESS :- **__\n`{LEGENDadre}`\n\n__**💸 CARD :- **__\n`{LEGENDcard}`")
+    await edit_or_reply(ULTRONevent, f"__**👤 NAME :- **__\n`{ULTRONname}`\n\n__**🏡 ADDRESS :- **__\n`{ULTRONadre}`\n\n__**💸 CARD :- **__\n`{ULTRONcard}`")
     
 
 @ULTRONBOT.on(admin_cmd(pattern="bin ?(.*)"))

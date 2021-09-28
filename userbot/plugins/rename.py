@@ -184,7 +184,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     thumb=thumb,
-                    caption="reuploaded by [ULTRONBOT](https://t.me/LEGENDSupport)",
+                    caption="reuploaded by [ULTRONBOT](https://t.me/ULTRONSupport)",
                     force_document=False,
                     allow_cache=False,
                     reply_to=event.message.id,

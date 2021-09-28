@@ -20,7 +20,7 @@ ULTRON_logo1 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 ULTRON_logo2 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 ULTRON_logo4 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 ULTRON_logo3 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
-LEGENDversion = "♥️𝚅2.𝙾♥️"
+ULTRONversion = "♥️𝚅2.𝙾♥️"
 
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 DEVLIST = [

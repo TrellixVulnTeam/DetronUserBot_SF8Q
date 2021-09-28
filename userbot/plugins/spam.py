@@ -33,16 +33,16 @@ async def spammer(e):
         )
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
-async def bigspam(LEGEND):
-    if not LEGEND.text[0].isalpha() and LEGEND.text[0] not in ("/", "#", "@", "!"):
-        ULTRON_msg = LEGEND.text
+async def bigspam(ULTRON):
+    if not ULTRON.text[0].isalpha() and ULTRON.text[0] not in ("/", "#", "@", "!"):
+        ULTRON_msg = ULTRON.text
         ULTRONBOT_count = int(ULTRON_msg[9:13])
-        ULTRON_spam = str(LEGEND.text[13:])
+        ULTRON_spam = str(ULTRON.text[13:])
         for i in range(1, ULTRONBOT_count):
-            await LEGEND.respond(ULTRON_spam)
-        await LEGEND.delete()
+            await ULTRON.respond(ULTRON_spam)
+        await ULTRON.delete()
         if LOGGER:
-            await LEGEND.client.send_message(
+            await ULTRON.client.send_message(
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 

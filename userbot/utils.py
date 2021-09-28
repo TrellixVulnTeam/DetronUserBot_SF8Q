@@ -154,7 +154,7 @@ def load_module(shortname):
         mod.borg = bot
         mod.ULTRONBOT = bot
         mod.edit_or_reply = edit_or_reply
-        mod.delete_LEGEND = delete_LEGEND
+        mod.delete_ULTRON = delete_ULTRON
         # support for ULTRONBOT originals
         sys.modules["ULTRONBOT.utils"] = userbot.utils
         sys.modules["ULTRONBOT"] = userbot
@@ -206,12 +206,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                LEGENDreg = "^" + Config.COMMAND_HAND_LER
+                ULTRONreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                LEGENDreg = "^\\" + Config.COMMAND_HAND_LER
+                ULTRONreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(LEGENDreg + pattern)
+            args["pattern"] = re.compile(ULTRONreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -271,12 +271,12 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                LEGENDreg = "^" + Config.SUDO_COMMAND_HAND_LER
+                ULTRONreg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                LEGENDreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                ULTRONreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(LEGENDreg + pattern)
+            args["pattern"] = re.compile(ULTRONreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -375,13 +375,13 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
-async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=None):
+async def delete_ULTRON(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        LEGENDevent = (
+        ULTRONevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
@@ -389,11 +389,11 @@ async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=No
             )
         )
     else:
-        LEGENDevent = await event.edit(
+        ULTRONevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await LEGENDevent.delete()
+    return await ULTRONevent.delete()
 
 # from paperplaneextended
 on = bot.on
@@ -464,13 +464,13 @@ async def eor(
     await event.delete()
     os.remove(file_name)
 
-async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=None):
+async def delete_ULTRON(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        LEGENDevent = (
+        ULTRONevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
@@ -478,11 +478,11 @@ async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=No
             )
         )
     else:
-        LEGENDevent = await event.edit(
+        ULTRONevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await LEGENDevent.delete()
+    return await ULTRONevent.delete()
 
 # from paperplaneextended
 on = bot.on

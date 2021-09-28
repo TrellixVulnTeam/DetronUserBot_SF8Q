@@ -3,7 +3,7 @@ import os
 
 from youtube_search import YoutubeSearch
 
-from userbot.utils import delete_LEGEND as eod
+from userbot.utils import delete_ULTRON as eod
 
 
 # Gets yt link of given query.

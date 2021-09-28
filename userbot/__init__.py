@@ -20,7 +20,7 @@ from var import Var
 
 BOTLOG = True
 StartTime = time.time()
-LEGENDversion = "𝚅•2.𝙾"
+ULTRONversion = "𝚅•2.𝙾"
 botversion = "𝚅•1.𝙾"
 
 os.system("pip install --upgrade pip")
@@ -36,7 +36,7 @@ else:
 
 
 
-bot = LEGEND
+bot = ULTRON
 tbot = ULTRONBOT
 
 DEVS = [

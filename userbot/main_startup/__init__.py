@@ -45,21 +45,21 @@ if not Config.LOG_GRP:
 
 # Clients - Upto 4 Clients is Supported!
 if Config.STRINGSESSION:
-    LEGEND = Client(
+    ULTRON = Client(
         Config.STRINGSESSION,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 if Config.STRINGSESSION_2:
-    LEGEND2 = Client(
+    ULTRON2 = Client(
         Config.STRINGSESSION_2,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 else:
-    LEGEND2 = None
+    ULTRON2 = None
 if Config.STRINGSESSION_3:
     LEGWND3 = Client(
         Config.STRINGSESSION_3,
@@ -68,16 +68,16 @@ if Config.STRINGSESSION_3:
         sleep_threshold=180,
     )
 else:
-    LEGEND3 = None
+    ULTRON3 = None
 if Config.STRINGSESSION_4:
-    LEGEND4 = Client(
+    ULTRON4 = Client(
         Config.STRINGSESSION_4,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 else:
-    LEGEND4 = None
+    ULTRON4 = None
 
 if Config.BOT_TOKEN:
     bot = Client(

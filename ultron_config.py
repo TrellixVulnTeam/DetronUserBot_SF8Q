@@ -152,7 +152,7 @@ if ENV:
         LYDIA_API = os.environ.get("LYDIA_API",None)
         PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", None)
         UPSTREAM_REPO = os.environ.get(
-            "UPSTREAM_REPO", "https://github.com/LEGEND-OS/ULTRONBOT"
+            "UPSTREAM_REPO", "https://github.com/ULTRON-OS/ULTRONBOT"
         )
         ULTRON_STRING = os.environ.get("ULTRON_STRING", None)
         BOT_MODE = os.environ.get("BOT_MODE", "ON")

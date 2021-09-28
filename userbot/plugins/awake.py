@@ -1,7 +1,7 @@
 import time
 
 from telethon import version
-from userbot import ALIVE_NAME, StartTime, LEGENDversion
+from userbot import ALIVE_NAME, StartTime, ULTRONversion
 from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from . import *
@@ -84,7 +84,7 @@ async def amireallyalive(event):
             f"~~~~~~~~~~~~~~~~~~~~~~~ \n"
             f"         𝕭𝖔𝖙 𝕾𝖙𝖆𝖙𝖚𝖘\n"
             f"•⚡• 𝕿єℓєτнοи    : `{version.__version__}`\n"
-            f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
+            f"🇮🇳 ℓєgєи∂ϐοτ  : `{ULTRONversion}`\n"
             f"🇮🇳 υρτιмє        : `{uptime}`\n"
             f"🔱 ɱαรƭεɾ        : {mention}\n"
             f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/Its_M1CKEY0P)\n"

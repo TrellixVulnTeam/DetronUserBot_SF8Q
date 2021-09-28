@@ -623,7 +623,7 @@ async def vapor(vpr):
 @bot.on(sudo_cmd(pattern=f"repo", allow_sudo=True))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await edit_or_reply(e, "Click [here](https://github.com/LEGEND-OS/ULTRONBOT) to open this 🔥**Lit AF!!**🔥 __ULTRONBOT__ Repo.. Join channel :- @ULTRON_Userbot")
+        await edit_or_reply(e, "Click [here](https://github.com/ULTRON-OS/ULTRONBOT) to open this 🔥**Lit AF!!**🔥 __ULTRONBOT__ Repo.. Join channel :- @ULTRON_Userbot")
 
 
 @bot.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True))
@@ -811,7 +811,7 @@ async def smrk(smk):
         message = textx
         message = str(message.message)
     if message == "dele":
-        await edit_or_reply(smk, message + "te the LEGEND" + "ツ")
+        await edit_or_reply(smk, message + "te the ULTRON" + "ツ")
         await edit_or_reply(smk, "ツ")
     else:
         smirk = " ツ"

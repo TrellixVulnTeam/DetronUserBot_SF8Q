@@ -20,7 +20,7 @@ from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ExportChatInviteRequest
-DEFAULTUSER = ALIVE_NAME or "LEGEND"
+DEFAULTUSER = ALIVE_NAME or "ULTRON"
 from . import * 
 legend_row = Config.BUTTONS_IN_HELP
 legend_emoji1 = Config.EMOJI_IN_HELP1
@@ -157,7 +157,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             ]
  
         elif event.query.user_id == bot.uid and query == "alive":
-            leg_end = alive_txt.format(Config.ALIVE_MSG, legend_mention, LEGENDversion, version.__version__, abuse_m, is_sudo, Config.BOY_OR_GIRL)
+            leg_end = alive_txt.format(Config.ALIVE_MSG, legend_mention, ULTRONversion, version.__version__, abuse_m, is_sudo, Config.BOY_OR_GIRL)
             alv_btn = [
                 [Button.url(f"{ULTRON_USER}", f"tg://openmessage?user_id={Its_M1CKEY0P}")],
                 [Button.url("My Channel", f"https://t.me/{my_channel}"), 
@@ -206,8 +206,8 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 title="Repository",
                 text=f"**⚜ 𝙻𝚎𝚐𝚎𝚗𝚍𝚊𝚛𝚢 𝙰𝚏 𝙻𝚎𝚐𝚎𝚗𝚍𝙱𝚘𝚝 ⚜**",
                 buttons=[
-                    [Button.url("♥️ 𝚁𝚎𝚙𝚘 ♥", "https://github.com/LEGEND-OS/ULTRONBOT")],
-                    [Button.url("♦️ Deploy ♦️", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FULTRONBOT&template=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FULTRONBOT")],
+                    [Button.url("♥️ 𝚁𝚎𝚙𝚘 ♥", "https://github.com/ULTRON-OS/ULTRONBOT")],
+                    [Button.url("♦️ Deploy ♦️", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FULTRON-OS%2FULTRONBOT&template=https%3A%2F%2Fgithub.com%2FULTRON-OS%2FULTRONBOT")],
                 ],
             )
 
@@ -233,7 +233,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/LEGEND-OS/ULTRONBOT"),
+                            "✨ REPO ✨", "https://github.com/ULTRON-OS/ULTRONBOT"),
                         custom.Button.url
                     (
                             "🔰 TUTORIAL 🔰", "https://youtu.be/bPzvmaQejNM"

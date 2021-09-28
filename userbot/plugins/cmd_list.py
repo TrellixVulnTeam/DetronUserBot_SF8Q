@@ -4,7 +4,7 @@ from userbot import ALIVE_NAME
 from . import *
 from userbot import bot as ULTRONBOT
 from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ULTRON"
 ULTRON_logo = "./ULTRONBOT_logo.jpg"
 @ULTRONBOT.on(admin_cmd(pattern=r"cmds"))
 @ULTRONBOT.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
@@ -23,7 +23,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"List of Plugins in ULTRONBOT :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/LEGENDSupport for help."
+    OUTPUT = f"List of Plugins in ULTRONBOT :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/ULTRONSupport for help."
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"

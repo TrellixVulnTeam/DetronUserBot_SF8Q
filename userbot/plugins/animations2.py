@@ -6,7 +6,7 @@ from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ULTRON"
 
 
 @bot.on(admin_cmd(pattern=r"boxs$", outgoing=True))
@@ -44,7 +44,7 @@ async def _(event):
     animation_ttl = range(0, 12)
     event = await edit_or_reply(event, "`Deploying...`")
     animation_chars = [
-        "**Heroku Connecting To Latest [Github Build](LEGEND-OS/ULTRONBOT)**",
+        "**Heroku Connecting To Latest [Github Build](ULTRON-OS/ULTRONBOT)**",
         f"**Build started by user** {DEFAULT}",
         f"**Deploy** `535a74f0` **by user** **{DEFAULT}**",
         "**Restarting Heroku Server...**",

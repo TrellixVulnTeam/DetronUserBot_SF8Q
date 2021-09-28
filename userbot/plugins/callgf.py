@@ -48,7 +48,7 @@ async def _(event):
             "`Me: hello Dear, Please Ban This Telegram Account.`",    
             "`GF: May I Know Who Is This?`",
             "`Me: Yo Brah, itz me`  ",
-            "`GF: OMG!!! Long time no see, Wassup LEGEND...\nI'll Make Sure That Guy Account Will Get Banned Within 24Hrs.`",
+            "`GF: OMG!!! Long time no see, Wassup ULTRON...\nI'll Make Sure That Guy Account Will Get Banned Within 24Hrs.`",
             "`Me: Thanks, See You Later Brah.`",
             "`GF: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
             "`Me: Is There Any Issue/Emergency???`",

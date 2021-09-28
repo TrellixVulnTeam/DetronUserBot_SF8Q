@@ -5,7 +5,7 @@ from telethon.errors import ChatSendInlineForbiddenError as noin
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
 
 from telethon import version
-from userbot import ALIVE_NAME, StartTime, LEGENDversion
+from userbot import ALIVE_NAME, StartTime, ULTRONversion
 from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from . import *
@@ -72,7 +72,7 @@ async def amireallyalive(alive):
         ULTRON_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
         ULTRON_caption += f"        **♥ẞø† ẞ✞︎α†µѕ** \n"
         ULTRON_caption += f"•⚜️• **Øաղ̃ҽ̈ɾ**          : {mention}\n\n"
-        ULTRON_caption += f"•📍• **𝖑𝖊ɠêɳ̃dẞø†**   : {LEGENDversion}\n"
+        ULTRON_caption += f"•📍• **𝖑𝖊ɠêɳ̃dẞø†**   : {ULTRONversion}\n"
         ULTRON_caption += f"•📍• **†ҽ̀lҽ́ƭhøղ̃**     : `{version.__version__}`\n"
         ULTRON_caption += f"•📍• **𝚄ρƭเɱε**         : `{uptime}`\n"
         ULTRON_caption += f"•📍• **𝙶𝚛𝚘𝚞𝚙**           : [𝙶𝚛𝚘𝚞𝚙](t.me/Legend_Userbot)\n"
@@ -89,7 +89,7 @@ async def amireallyalive(alive):
             f"~~~~~~~~~~~~~~~~~~~~~~~ \n"
             f"         𝕭𝖔𝖙 𝕾𝖙𝖆𝖙𝖚𝖘\n"
             f"•⚡• 𝕿єℓєτнοи    : `{version.__version__}`\n"
-            f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
+            f"🇮🇳 ℓєgєи∂ϐοτ  : `{ULTRONversion}`\n"
             f"🇮🇳 υρτιмє        : `{uptime}`\n"
             f"🔱 ɱαรƭεɾ        : {mention}\n"
             f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/Its_M1CKEY0P)\n"
@@ -104,7 +104,7 @@ msg = f"""
 **    ♥️ ẞø✞︎ ẞ✞︎α✞︎µѕ ♥️**
 **•⚜️•Øաղ̃ҽ̈r     :** **{mention}**
 
-**•🌹•𝖑𝖊ɠêɳ̃dẞø✞︎ :** {LEGENDversion}
+**•🌹•𝖑𝖊ɠêɳ̃dẞø✞︎ :** {ULTRONversion}
 **•🌹•✞︎ҽ̀lҽ́ƭhøղ  :** {version.__version__}
 **•🌹•Ãbûßê     :**  {abuse_m}
 **•🌹•ßudø      :**  {is_sudo}

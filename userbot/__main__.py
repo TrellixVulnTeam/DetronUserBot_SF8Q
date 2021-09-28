@@ -8,7 +8,7 @@ from var import Var
 from userbot.Config import Config
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 from userbot.utils import load_module, start_assistant
-from userbot import LOAD_PLUG, LOGS, LEGENDversion
+from userbot import LOAD_PLUG, LOGS, ULTRONversion
 from pathlib import Path
 import asyncio
 import telethon.utils
@@ -72,10 +72,10 @@ if LOAD_ASSISTANT == True:
             except Exception as er:
                 print(er)
 
-print(f"""『🔱🇱 🇪 🇬 🇪 🇳 🇩 B O T 🔱』➙𖤍࿐ IS ON!!! LEGEND VERSION :- {LEGENDversion}
+print(f"""『🔱🇱 🇪 🇬 🇪 🇳 🇩 B O T 🔱』➙𖤍࿐ IS ON!!! ULTRON VERSION :- {ULTRONversion}
 TYPE :- " .gpromote @M1CKEY_0P " OR .legend OR .ping CHECK IF I'M ON!
 ╔════❰ULTRONBOT❱═❍⊱❁۪۪
-║┣⪼ OWNER - LEGEND
+║┣⪼ OWNER - ULTRON
 ║┣⪼{ULTRON_PIC}
 ║┣⪼ CREATOR -@M1CKEY_0P
 ║┣⪼ TELETHON - 1.2.0
@@ -89,7 +89,7 @@ async def legend_is_on():
             await bot.send_file(
                 Config.LOGGER_ID,
                 ULTRON_PIC,
-                caption=f"#START \n\nDeployed ULTRONBOT Successfully\n\n**ULTRONBOT- {LEGENDversion}**\n\nType `{l1}ping` or `{l1}alive` to check! \n\nJoin [LegendBot Channel](t.me/Its_LegendBot) for Updates & [LegendBot Chat](t.me/Legend_Userbot) for any query regarding LegendBot",
+                caption=f"#START \n\nDeployed ULTRONBOT Successfully\n\n**ULTRONBOT- {ULTRONversion}**\n\nType `{l1}ping` or `{l1}alive` to check! \n\nJoin [LegendBot Channel](t.me/Its_LegendBot) for Updates & [LegendBot Chat](t.me/Legend_Userbot) for any query regarding LegendBot",
             )
     except Exception as e:
         print(str(e))

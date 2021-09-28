@@ -429,7 +429,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND = await event.edit("`Collecting fstat....`")
+    ULTRON = await event.edit("`Collecting fstat....`")
     thumb = ULTRON_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -439,7 +439,7 @@ async def _(event):
         lavde = event.pattern_match.group(1)
         user = lavde
     if lavde == "":
-        await LEGEND.edit(
+        await ULTRON.edit(
             "`Need username/id to check fstat`"
         )
         return
@@ -464,7 +464,7 @@ async def _(event):
                     await borg.send_message(event.chat_id, massive.text)
                 await event.delete()
             except YouBlockedUserError:
-                await LEGEND.edit("`Please Unblock` @MissRose_Bot")
+                await ULTRON.edit("`Please Unblock` @MissRose_Bot")
 
 
 @ULTRONBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
@@ -472,7 +472,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND = await eor(event, "`Fetching fed info.... please wait`")
+    ULTRON = await eor(event, "`Fetching fed info.... please wait`")
     lavde = event.pattern_match.group(1)
     async with borg.conversation(bot) as conv:
         try:
@@ -480,9 +480,9 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + lavde)
             massive = await conv.get_response()
-            await LEGEND.edit(massive.text + "\n\n**LEGENDARY_AF_ULTRONBOT**")
+            await ULTRON.edit(massive.text + "\n\n**ULTRONARY_AF_ULTRONBOT**")
         except YouBlockedUserError:
-            await LEGEND.edit("`Please Unblock` @MissRose_Bot")
+            await ULTRON.edit("`Please Unblock` @MissRose_Bot")
             
 
 CmdHelp("fed_bot").add_command(

