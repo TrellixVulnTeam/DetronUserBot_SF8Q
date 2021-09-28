@@ -15,6 +15,6 @@
 
 
 rm -rf InVade
-git clone https://github.com/MickeyxD/DetronUserBot
-cd DetronUserBot
+git clone https://github.com/MickeyxD/UltronUserBot
+cd UltronUserBot
 python3 -m userbot
