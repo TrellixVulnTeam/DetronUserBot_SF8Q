@@ -9,7 +9,7 @@ class Development(Config):
 
   # the name to display in your alive message.
   # If not filled anything then default value is LEGEND User.
-  ALIVE_NAME = "VampireX User"
+  ALIVE_NAME = "UltronBot User"
 
   # create any PostgreSQL database.
   # I recommend to use elephantsql and paste that link here
