@@ -1,4 +1,4 @@
-# Made by @Its_LegendBoy for @LEGEND_Userbot
+# Made by @M1CKEY_0P for @LEGEND_Userbot
 
 from ULTRONBOT.utils import *
 from userbot.cmdhelp import CmdHelp

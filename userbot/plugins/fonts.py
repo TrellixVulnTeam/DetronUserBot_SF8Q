@@ -1,4 +1,4 @@
-# Added more fonts by @Its_LegendBoy
+# Added more fonts by @M1CKEY_0P
 # Ported from saitama i guess
 
 from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply

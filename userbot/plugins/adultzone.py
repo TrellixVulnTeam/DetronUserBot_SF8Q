@@ -1,5 +1,5 @@
 # credits to userge
-# ported to ULTRONBOT by @Its_LegendBoy
+# ported to ULTRONBOT by @M1CKEY_0P
 # will be adding more soon
 
 import asyncio

@@ -1,4 +1,4 @@
-# by uniborg...Thanks @Its_LegendBoy
+# by uniborg...Thanks @M1CKEY_0P
 # Now will be used in ULTRONBOT too....
 import asyncio
 import datetime

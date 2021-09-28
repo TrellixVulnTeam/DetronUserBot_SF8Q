@@ -1,4 +1,4 @@
-#credits @Its_LegendBoy
+#credits @M1CKEY_0P
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 

@@ -10,7 +10,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
 
 # Thanks to LEGEND BRO.. 
-# animation Idea by @Its_LegendBoy (op coder)
+# animation Idea by @M1CKEY_0P (op coder)
 # Kang with credits else gay...
 # alive.py for
 

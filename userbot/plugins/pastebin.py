@@ -278,7 +278,7 @@ async def _(event):
         nurl = f"https://del.dog/v/{r['key']}"
         await edit_or_reply(event, "Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl)
         )
-    # This module is modded by @Its_LegendBoy #KeepCredit
+    # This module is modded by @M1CKEY_0P #KeepCredit
     else:
         await edit_or_reply(event, "**Making instant view...**")
         async with event.client.conversation(chat) as conv:
