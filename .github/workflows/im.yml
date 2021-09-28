@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "ULTRONboy"
+          find: "legendbot"
 
-          replace: "ULTRON"
+          replace: "ULTRONBOT"
 
       - name: Create Pull Request
 
