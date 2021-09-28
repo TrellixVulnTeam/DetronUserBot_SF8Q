@@ -11,7 +11,7 @@ from telethon import events
 
 import asyncio
 from userbot import CmdHelp
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @bot.on(admin_cmd("bigoofs"))
 async def _(event):

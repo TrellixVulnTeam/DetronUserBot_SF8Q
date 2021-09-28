@@ -6,12 +6,12 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from DETRONBOT import CmdHelp, bot as DETRONBOT
+from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from ULTRONBOT import CmdHelp, bot as ULTRONBOT
 
 
-@DETRONBOT.on(admin_cmd("gencc$"))
-@DETRONBOT.on(sudo_cmd("gencc$", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd("gencc$"))
+@ULTRONBOT.on(sudo_cmd("gencc$", allow_sudo=True))
 async def _(LEGENDevent):
     if LEGENDevent.fwd_from:
         return
@@ -23,8 +23,8 @@ async def _(LEGENDevent):
     await edit_or_reply(LEGENDevent, f"__**👤 NAME :- **__\n`{LEGENDname}`\n\n__**🏡 ADDRESS :- **__\n`{LEGENDadre}`\n\n__**💸 CARD :- **__\n`{LEGENDcard}`")
     
 
-@DETRONBOT.on(admin_cmd(pattern="bin ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="bin ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -44,8 +44,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@DETRONBOT.on(admin_cmd(pattern="vbv ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="vbv ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -65,8 +65,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@DETRONBOT.on(admin_cmd(pattern="key ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="key ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -86,8 +86,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@DETRONBOT.on(admin_cmd(pattern="iban ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="iban ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -107,8 +107,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@DETRONBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -128,8 +128,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@DETRONBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 

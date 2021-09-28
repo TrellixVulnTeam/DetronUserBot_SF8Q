@@ -1,5 +1,5 @@
 from telethon.tl.types import InputMediaDice
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

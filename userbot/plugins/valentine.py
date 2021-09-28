@@ -2,17 +2,17 @@ import asyncio
 import random
 from asyncio import sleep
 
-from DETRONBOT import CmdHelp, bot as DETRONBOT, ALIVE_NAME
-from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from ULTRONBOT import CmdHelp, bot as ULTRONBOT, ALIVE_NAME
+from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Your Lover"
 
-legend = DETRONBOT.uid
+legend = ULTRONBOT.uid
 
 LEGEND = f"[{DEFAULTUSER}](tg://user?id={legend})"
 
-@DETRONBOT.on(admin_cmd(pattern="hvd$"))
-@DETRONBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="hvd$"))
+@ULTRONBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
 async def love(event):
     if event.fwd_from:
         return
@@ -38,8 +38,8 @@ async def love(event):
     await event.edit("__**HAPPY VALENTINE'S DAY**__ [❤️](https://telegra.ph/file/4d51f6a5d98ba94ae2af7.jpg)", link_preview=True)
     
     
-@DETRONBOT.on(admin_cmd(pattern="vday$"))
-@DETRONBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="vday$"))
+@ULTRONBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
 async def gif(event):
     if event.fwd_from:
         return

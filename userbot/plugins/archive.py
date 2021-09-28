@@ -15,7 +15,7 @@ from telethon.tl.types import DocumentAttributeVideo
 from telethon import events
 from userbot import CMD_HELP
 from userbot.Config import Config
-from DETRONBOT.utils import admin_cmd, progress
+from ULTRONBOT.utils import admin_cmd, progress
 from userbot.cmdhelp import CmdHelp
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
@@ -55,7 +55,7 @@ async def _(event):
     await borg.send_file(
         event.chat_id,
         directory_name + ".zip",
-        caption="Zipped By DETRONBOT",
+        caption="Zipped By ULTRONBOT",
         force_document=True,
         allow_cache=False,
         reply_to=event.message.id,
@@ -102,7 +102,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".rar",
-                caption="rarred By DETRONBOT",
+                caption="rarred By ULTRONBOT",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -154,7 +154,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".7z",
-                caption="7z archived By DETRONBOT",
+                caption="7z archived By ULTRONBOT",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -206,7 +206,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 output,
-                caption="TAR By DETRONBOT",
+                caption="TAR By ULTRONBOT",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,

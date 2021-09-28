@@ -24,7 +24,7 @@
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name. By default it is LEGEND User",
-      "value": "DETRONBOT 🇮🇳",
+      "value": "ULTRONBOT 🇮🇳",
       "required": false
     },
     "ALIVE_MSG": {
@@ -132,7 +132,7 @@
        "value": ""
     }, 
     "DETRON_STRING": {
-      "description": "Get this value by running https://repl.it/@D15H4NT0P/DETRONBOT#main.py ",
+      "description": "Get this value by running https://repl.it/@D15H4NT0P/ULTRONBOT#main.py ",
       "value": ""
     },
     "HEROKU_API_KEY": {

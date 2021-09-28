@@ -5,7 +5,7 @@ import requests
 from telethon import functions
 from . import *
 from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 
@@ -18,8 +18,8 @@ from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot, BotInl
 msg = f"""
 **⚜ 𝙻𝚎𝚐𝚎𝚗𝚍𝚊𝚛𝚢 𝙰𝚏 𝙻𝚎𝚐𝚎𝚗𝚍𝙱𝚘𝚝 ⚜**
 
-  •        [♥️ 𝚁𝚎𝚙𝚘 ♥️](https://github.com/LEGEND-OS/DETRONBOT)
-  •        [♦️ Deploy ♦️](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FDETRONBOT&template=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FDETRONBOT)
+  •        [♥️ 𝚁𝚎𝚙𝚘 ♥️](https://github.com/LEGEND-OS/ULTRONBOT)
+  •        [♦️ Deploy ♦️](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FULTRONBOT&template=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FULTRONBOT)
 
   •  ©️ {Legend_channel} ™
 """

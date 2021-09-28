@@ -12,10 +12,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon import functions, types, events
-from DETRONBOT import CmdHelp, bot as DETRONBOT
-from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from DETRONBOT.Config import Config
-from DETRONBOT.plugins.sql_helper.fban_sql import (
+from ULTRONBOT import CmdHelp, bot as ULTRONBOT
+from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from ULTRONBOT.Config import Config
+from ULTRONBOT.plugins.sql_helper.fban_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -30,8 +30,8 @@ LEGEND_logo = "./LEGEND_logo.jpg"
 # modified by @Its_LegendBoy for fbans
 
 
-@DETRONBOT.on(admin_cmd(pattern="fban ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="fban ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,8 +144,8 @@ async def _(event):
                 except BaseException:
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
 
-@DETRONBOT.on(admin_cmd(pattern="unfban ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="unfban ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -259,8 +259,8 @@ async def _(event):
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")
 
 
-@DETRONBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -300,8 +300,8 @@ async def add_ch(event):
         await event.delete()
 
 
-@DETRONBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -329,8 +329,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@DETRONBOT.on(admin_cmd(pattern="fgroups"))
-@DETRONBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="fgroups"))
+@ULTRONBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -356,8 +356,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@DETRONBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
 async def search(event):
     if event.fwd_from:
         return
@@ -377,8 +377,8 @@ async def search(event):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
-@DETRONBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
-@DETRONBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
+@ULTRONBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -403,8 +403,8 @@ async def _(event):
             await eor(event, f"{response.message.message}")
 
 
-@DETRONBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -424,8 +424,8 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@DETRONBOT.on(admin_cmd(pattern="fstat ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="fstat ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -454,11 +454,11 @@ async def _(event):
                     await massive.click(0)
                     await asyncio.sleep(2)
                     massive = await conv.get_response()
-                    await DETRONBOT.send_file(
+                    await ULTRONBOT.send_file(
                         event.chat_id,
                         massive,
                         thumb=thumb,
-                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using DETRONBOT](t.me/LEGEND_Userbot) ⚡**",
+                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using ULTRONBOT](t.me/LEGEND_Userbot) ⚡**",
                     )
                 else:
                     await borg.send_message(event.chat_id, massive.text)
@@ -467,8 +467,8 @@ async def _(event):
                 await LEGEND.edit("`Please Unblock` @MissRose_Bot")
 
 
-@DETRONBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -480,7 +480,7 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + lavde)
             massive = await conv.get_response()
-            await LEGEND.edit(massive.text + "\n\n**LEGENDARY_AF_DETRONBOT**")
+            await LEGEND.edit(massive.text + "\n\n**LEGENDARY_AF_ULTRONBOT**")
         except YouBlockedUserError:
             await LEGEND.edit("`Please Unblock` @MissRose_Bot")
             

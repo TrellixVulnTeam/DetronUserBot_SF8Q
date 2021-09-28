@@ -2,7 +2,7 @@ import requests
 from validators.url import url
 
 from . import *
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

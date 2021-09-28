@@ -2,7 +2,7 @@
 Syntax: .get_id"""
 from telethon import events
 from telethon.utils import pack_bot_file_id
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 CmdHelp("get_id").add_command(
     "get_id", None, "Get id of any group / channel / any user"

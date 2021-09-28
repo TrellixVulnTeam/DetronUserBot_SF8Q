@@ -5,7 +5,7 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from userbot import bot as danish_00
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd as admin_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd as admin_cmd
 from userbot.cmdhelp import CmdHelp
 @bot.on(admin_cmd(pattern="bin ?(.*)"))
 async def _(event):

@@ -63,7 +63,7 @@ async def start(event):
             caption=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.url("Dᴇᴘʟᴏʏ Yᴏᴜʀ Oᴡɴ DETRONBOT", "http://GitHub.com/LEGEND-OS/DETRONBOT")],
+                [custom.Button.url("Dᴇᴘʟᴏʏ Yᴏᴜʀ Oᴡɴ ULTRONBOT", "http://GitHub.com/LEGEND-OS/ULTRONBOT")],
                 [Button.url("Sᴜᴘᴘᴏʀᴛ", "t.me/Legend_Userbot")],
             ],
         )

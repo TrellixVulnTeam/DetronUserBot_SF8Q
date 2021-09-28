@@ -18,43 +18,43 @@ from userbot.helpers.functions import (
     iphonex,
     lolice,
 )
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="mask$", outgoing=True))
 @bot.on(sudo_cmd(pattern="mask$", allow_sudo=True))
-async def _(DETRONBOT):
-    reply_message = await DETRONBOT.get_reply_message()
+async def _(ULTRONBOT):
+    reply_message = await ULTRONBOT.get_reply_message()
     if not reply_message.media or not reply_message:
-        await edit_or_reply(DETRONBOT, "```reply to media message```")
+        await edit_or_reply(ULTRONBOT, "```reply to media message```")
         return
     chat = "@hazmat_suit_bot"
     if reply_message.sender.bot:
-        await edit_or_reply(DETRONBOT, "```Reply to actual users message.```")
+        await edit_or_reply(ULTRONBOT, "```Reply to actual users message.```")
         return
-    event = await DETRONBOT.edit("```Processing```")
-    async with DETRONBOT.client.conversation(chat) as conv:
+    event = await ULTRONBOT.edit("```Processing```")
+    async with ULTRONBOT.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=905164246)
             )
-            await DETRONBOT.client.send_message(chat, reply_message)
+            await ULTRONBOT.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await edit_or_reply(DETRONBOT, "`Please unblock` @hazmat_suit_bot `and try again`")
+            await edit_or_reply(ULTRONBOT, "`Please unblock` @hazmat_suit_bot `and try again`")
             return
         if response.text.startswith("Forward"):
-            await edit_or_reply(DETRONBOT, "```can you kindly disable your forward privacy settings for good?```"
+            await edit_or_reply(ULTRONBOT, "```can you kindly disable your forward privacy settings for good?```"
             )
         else:
-            await DETRONBOT.client.send_file(event.chat_id, response.message.media)
+            await ULTRONBOT.client.send_file(event.chat_id, response.message.media)
             await event.delete()
 
 
 @bot.on(admin_cmd(pattern="awooify$", outgoing=True))
 @bot.on(sudo_cmd(pattern="awooify$", allow_sudo=True))
-async def DETRONBOT(LEGENDmemes):
+async def ULTRONBOT(LEGENDmemes):
     replied = await LEGENDmemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -105,7 +105,7 @@ async def DETRONBOT(LEGENDmemes):
 
 @bot.on(admin_cmd(pattern="lolice$"))
 @bot.on(sudo_cmd(pattern="lolice$", allow_sudo=True))
-async def DETRONBOT(LEGENDmemes):
+async def ULTRONBOT(LEGENDmemes):
     replied = await LEGENDmemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -156,7 +156,7 @@ async def DETRONBOT(LEGENDmemes):
 
 @bot.on(admin_cmd(pattern="bun$"))
 @bot.on(sudo_cmd(pattern="bun$", allow_sudo=True))
-async def DETRONBOT(LEGENDmemes):
+async def ULTRONBOT(LEGENDmemes):
     replied = await LEGENDmemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -207,7 +207,7 @@ async def DETRONBOT(LEGENDmemes):
 
 @bot.on(admin_cmd(pattern="iphx$"))
 @bot.on(sudo_cmd(pattern="iphx$", allow_sudo=True))
-async def DETRONBOT(LEGENDmemes):
+async def ULTRONBOT(LEGENDmemes):
     replied = await LEGENDmemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)

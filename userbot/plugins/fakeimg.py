@@ -1,6 +1,6 @@
 import requests
 from userbot import CmdHelp
-from DETRONBOT.utils import edit_or_reply, admin_cmd, sudo_cmd
+from ULTRONBOT.utils import edit_or_reply, admin_cmd, sudo_cmd
 import os
 
 
@@ -14,11 +14,11 @@ async def _(event):
     response = requests.get(url)
     await event.edit("`Creating a fake face...`")
     if response.status_code == 200:
-      with open("DETRONBOT.jpg", 'wb') as f:
+      with open("ULTRONBOT.jpg", 'wb') as f:
         f.write(response.content)
     
-    captin = f"Fake Image By DETRONBOT."
-    fole = "DETRONBOT.jpg"
+    captin = f"Fake Image By ULTRONBOT."
+    fole = "ULTRONBOT.jpg"
     await borg.send_file(event.chat_id, fole, caption=captin)
     await event.delete()
-    os.system("rm /root/userbot/DETRONBOT.jpg ")
+    os.system("rm /root/userbot/ULTRONBOT.jpg ")

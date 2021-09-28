@@ -5,7 +5,7 @@ import sys
 import git
 
 from userbot.Config import Config
-from DETRONBOT.utils import admin_cmd
+from ULTRONBOT.utils import admin_cmd
 from . import *
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -15,13 +15,13 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = "**The DETRONBOT** is up-to-date sir."
+BOT_IS_UP_TO_DATE = "**The ULTRONBOT** is up-to-date sir."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "changelog: \n\n{changelog}\n"
-    "updating your DETRONBOT ..."
+    "updating your ULTRONBOT ..."
 )
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your DETRONBOT...`"
+NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your ULTRONBOT...`"
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"

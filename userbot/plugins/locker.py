@@ -3,7 +3,7 @@ from telethon.tl.types import ChatBannedRights
 
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import errors_handler, register
-from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

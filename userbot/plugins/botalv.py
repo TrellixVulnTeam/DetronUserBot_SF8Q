@@ -1,5 +1,5 @@
 from userbot import *
-from DETRONBOT.utils import *
+from ULTRONBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 from telethon import events, version
 from telethon.events import NewMessage
@@ -33,7 +33,7 @@ pm_caption += f"**┣🌷 𝚂𝚞𝚍𝚘     : `{sudou}`**\n"
 pm_caption += f"**┣🌷 𝙾𝚠𝚗𝚎𝚛     : [𝖑𝖊ɠêɳ̃d](https://t.me/Its_LegendBoy)**\n"
 pm_caption += f"**┗━━━━━[♠️𝙶𝚛𝚘𝚞𝚙♠️](https://t.me/Legend_Userbot)━━━━━━━━┛**\n"
 
-pm_caption += "    [✨яєρο✨](https://github.com/LEGEND-OS/DETRONBOT) 🔹 [📜ℓιϲєиѕє📜](https://github.com/LEGEND-OS/DETRONBOT/blob/master/LICENSE)"
+pm_caption += "    [✨яєρο✨](https://github.com/LEGEND-OS/ULTRONBOT) 🔹 [📜ℓιϲєиѕє📜](https://github.com/LEGEND-OS/ULTRONBOT/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="bot$"))

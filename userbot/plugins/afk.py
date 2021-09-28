@@ -1,5 +1,5 @@
 # by uniborg...Thanks @Its_LegendBoy
-# Now will be used in DETRONBOT too....
+# Now will be used in ULTRONBOT too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -8,7 +8,7 @@ from telethon import events
 from telethon.tl import functions, types
 from userbot import CMD_HELP
 from userbot import ALIVE_NAME, LEGENDversion
-from DETRONBOT.utils import admin_cmd, edit_or_reply
+from ULTRONBOT.utils import admin_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓєgєи∂"
@@ -42,7 +42,7 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        DETRONBOT = await borg.send_message(
+        ULTRONBOT = await borg.send_message(
             event.chat_id,
             "🔥ι αм ϐαϲκ αℓινє !\n**и𝔬 𝔏οиgєя 𝔞ƒκ.**\n⏱️ `աαs αƒk fοя:``"
             + total_afk_time
@@ -65,7 +65,7 @@ async def set_not_afk(event):
                 silent=True,
             )
         await asyncio.sleep(5)
-        await DETRONBOT.delete()
+        await ULTRONBOT.delete()
         USER_AFK = {}  # pylint:disable=E0602
         afk_time = None  # pylint:disable=E0602
 

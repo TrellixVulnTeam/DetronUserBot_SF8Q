@@ -19,7 +19,7 @@ echo """
 
 
 
-Legendary DETRONBOT
+Legendary ULTRONBOT
 @DetronBot_Support
 """
 

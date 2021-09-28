@@ -152,12 +152,12 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
-        mod.DETRONBOT = bot
+        mod.ULTRONBOT = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_LEGEND = delete_LEGEND
-        # support for DETRONBOT originals
-        sys.modules["DETRONBOT.utils"] = userbot.utils
-        sys.modules["DETRONBOT"] = userbot
+        # support for ULTRONBOT originals
+        sys.modules["ULTRONBOT.utils"] = userbot.utils
+        sys.modules["ULTRONBOT"] = userbot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)

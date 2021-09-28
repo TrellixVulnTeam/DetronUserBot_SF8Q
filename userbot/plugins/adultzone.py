@@ -1,5 +1,5 @@
 # credits to userge
-# ported to DETRONBOT by @Its_LegendBoy
+# ported to ULTRONBOT by @Its_LegendBoy
 # will be adding more soon
 
 import asyncio
@@ -9,7 +9,7 @@ import urllib
 import requests
 
 from userbot import *
-from DETRONBOT.utils import *
+from ULTRONBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))

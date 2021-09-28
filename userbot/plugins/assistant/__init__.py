@@ -1,4 +1,4 @@
-# DETRONBOT Assistant
+# ULTRONBOT Assistant
 from . import *
 from telethon import Button, custom
 

@@ -10,7 +10,7 @@
 from random import randint
 from time import sleep
 
-from DETRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from ULTRONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

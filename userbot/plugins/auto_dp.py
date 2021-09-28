@@ -18,7 +18,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from DETRONBOT.utils import admin_cmd
+from ULTRONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 COLLECTION_STRING1 = [

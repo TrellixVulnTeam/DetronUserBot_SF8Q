@@ -1,11 +1,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from DETRONBOT import bot, CmdHelp
-from DETRONBOT.utils import admin_cmd, edit_or_reply as eor, sudo_cmd
+from ULTRONBOT import bot, CmdHelp
+from ULTRONBOT.utils import admin_cmd, edit_or_reply as eor, sudo_cmd
 
-@DETRONBOT.on(admin_cmd(pattern="history ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="history ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
 async def _(LEGENDevent):
     if LEGENDevent.fwd_from:
         return 
@@ -37,8 +37,8 @@ async def _(LEGENDevent):
              await LEGENDevent.delete()
              await LEGENDevent.client.send_message(LEGENDevent.chat_id, response2.message)
 
-@DETRONBOT.on(admin_cmd(pattern="unh ?(.*)"))
-@DETRONBOT.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
+@ULTRONBOT.on(admin_cmd(pattern="unh ?(.*)"))
+@ULTRONBOT.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
 async def _(LEGENDevent):
     if LEGENDevent.fwd_from:
         return 

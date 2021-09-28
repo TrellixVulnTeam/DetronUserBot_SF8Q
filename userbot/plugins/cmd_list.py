@@ -2,12 +2,12 @@ import asyncio
 import io
 from userbot import ALIVE_NAME
 from . import *
-from userbot import bot as DETRONBOT
-from DETRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import bot as ULTRONBOT
+from ULTRONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
-LEGEND_logo = "./DETRONBOT_logo.jpg"
-@DETRONBOT.on(admin_cmd(pattern=r"cmds"))
-@DETRONBOT.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
+LEGEND_logo = "./ULTRONBOT_logo.jpg"
+@ULTRONBOT.on(admin_cmd(pattern=r"cmds"))
+@ULTRONBOT.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -23,7 +23,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"List of Plugins in DETRONBOT :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/LEGENDSupport for help."
+    OUTPUT = f"List of Plugins in ULTRONBOT :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/LEGENDSupport for help."
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"
@@ -35,5 +35,5 @@ async def install(event):
                 thumb=thumb,
                 reply_to=reply_to_id,
             )
-            await edit_or_reply(LEGEND_file, f"Output Too Large. This is the file for the list of plugins in DETRONBOT.\n\n**BY :-** {DEFAULTUSER}")
+            await edit_or_reply(LEGEND_file, f"Output Too Large. This is the file for the list of plugins in ULTRONBOT.\n\n**BY :-** {DEFAULTUSER}")
             await event.delete()

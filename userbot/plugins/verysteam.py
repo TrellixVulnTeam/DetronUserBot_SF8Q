@@ -12,7 +12,7 @@ from datetime import datetime
 import aiohttp
 import magic
 import requests
-from DETRONBOT.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
+from ULTRONBOT.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
