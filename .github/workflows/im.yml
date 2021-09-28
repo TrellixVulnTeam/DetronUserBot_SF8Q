@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "@Its_LegendBoy"
+          find: "LegendBoy"
 
-          replace: "@M1CKEY_0P"
+          replace: "M1CKEY0P"
 
       - name: Create Pull Request
 
