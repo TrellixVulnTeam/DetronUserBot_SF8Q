@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "VampireX"
+          find: "https://github.com/LEGEND-OS/LEGENDUSERBOT"
 
-          replace: "UltronBot"
+          replace: "https://github.com/MickeyxD/UltronUserBot"
 
       - name: Create Pull Request
 
