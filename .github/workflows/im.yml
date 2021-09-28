@@ -18,7 +18,7 @@ jobs:
 
         with:
 
-          find: "LEGEND"
+          find: "ULTRONBOY"
 
           replace: "ULTRON"
 
